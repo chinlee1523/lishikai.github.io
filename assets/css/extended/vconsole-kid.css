@@ -1,0 +1,156 @@
+/* vConsole-ish green terminal vibe + kid-friendly spacing */
+
+:root {
+  /* Base palette */
+  --vc-bg: #021f08;
+  --vc-bg-2: #012606;
+  --vc-text: #c8ffcf;
+  --vc-muted: #87d996;
+  --vc-accent: #34ff6a;
+  --vc-accent-2: #00d6ff;
+  --vc-border: rgba(52, 255, 106, 0.22);
+
+  /* PaperMod token overrides */
+  --theme: var(--vc-bg);
+  --entry: rgba(1, 38, 6, 0.78);
+  --primary: var(--vc-text);
+  --secondary: var(--vc-muted);
+  --tertiary: rgba(135, 217, 150, 0.25);
+  --content: var(--vc-text);
+  --hljs-bg: rgba(1, 38, 6, 0.65);
+  --code-bg: rgba(1, 38, 6, 0.65);
+  --border: var(--vc-border);
+  --link-hover-color: var(--vc-accent);
+}
+
+/* A subtle “console scanline/grid” background */
+body {
+  background:
+    linear-gradient(to bottom, rgba(52, 255, 106, 0.06), rgba(0, 0, 0, 0) 35%),
+    repeating-linear-gradient(
+      0deg,
+      rgba(52, 255, 106, 0.03),
+      rgba(52, 255, 106, 0.03) 1px,
+      transparent 1px,
+      transparent 6px
+    ),
+    radial-gradient(1200px 600px at 15% 10%, rgba(52, 255, 106, 0.12), transparent 55%),
+    radial-gradient(900px 500px at 85% 0%, rgba(0, 214, 255, 0.10), transparent 55%),
+    var(--vc-bg);
+  color: var(--vc-text);
+  text-shadow: 0 0 12px rgba(52, 255, 106, 0.08);
+}
+
+/* Kid-friendly: bigger font, bigger line-height, larger tap targets */
+html {
+  font-size: 18px;
+}
+
+body,
+.post-content {
+  line-height: 1.85;
+  letter-spacing: 0.1px;
+}
+
+/* Softer rounded cards */
+.post-entry,
+.first-entry,
+.entry-content,
+.page-header,
+.post-single,
+.toc {
+  border: 1px solid var(--vc-border);
+  border-radius: 16px;
+  background: var(--entry);
+  box-shadow: 0 0 0 1px rgba(52, 255, 106, 0.05), 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Links */
+a {
+  color: var(--vc-accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+a:hover {
+  color: var(--vc-accent-2);
+}
+
+/* Header and menu */
+.nav,
+.header {
+  border-bottom: 1px solid var(--vc-border);
+  background: rgba(1, 38, 6, 0.65);
+  backdrop-filter: blur(8px);
+}
+
+.menu a,
+.logo a,
+.lang-switch a {
+  padding: 10px 12px; /* bigger hit area */
+  border-radius: 12px;
+}
+
+.menu a:hover,
+.logo a:hover,
+.lang-switch a:hover {
+  background: rgba(52, 255, 106, 0.10);
+}
+
+/* Buttons (search, pagination, etc.) */
+button,
+.pagination a,
+.top-link,
+.share-buttons a {
+  border-radius: 14px !important;
+  border: 1px solid var(--vc-border) !important;
+}
+
+button:hover,
+.pagination a:hover,
+.top-link:hover,
+.share-buttons a:hover {
+  box-shadow: 0 0 0 4px rgba(52, 255, 106, 0.10);
+}
+
+/* Code blocks: more readable for kids */
+pre,
+code,
+kbd {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+}
+
+pre {
+  border: 1px solid var(--vc-border);
+  border-radius: 14px;
+  background: var(--hljs-bg);
+}
+
+code {
+  border-radius: 10px;
+  padding: 2px 6px;
+  background: rgba(52, 255, 106, 0.08);
+}
+
+/* Make headings pop like a “console prompt” */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--vc-text);
+}
+
+h1::before,
+h2::before {
+  content: "> ";
+  color: var(--vc-accent);
+}
+
+/* Images: softer */
+img {
+  border-radius: 16px;
+}
+
+/* Reduce harsh separators */
+hr {
+  border-color: rgba(52, 255, 106, 0.18);
+}
+
+

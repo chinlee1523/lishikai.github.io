@@ -18,7 +18,8 @@ params:
   title: "李式楷的日记本"
   description: "记录生活、思考与成长"
   author: "李式楷"
-  defaultTheme: auto # auto / light / dark
+  # 绿黑“终端风”建议固定 dark，避免 auto 跟随系统切到亮色导致对比度不一致
+  defaultTheme: dark # auto / light / dark
   assets:
     favicon: "/favicon.ico"
   homeInfoParams:
